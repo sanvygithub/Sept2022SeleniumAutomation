@@ -1,8 +1,18 @@
 package com.qa.opencart.pages;
 
+import org.openqa.selenium.By;
+
 public class CartPage {
 	
-	int i=100;
-	String cart="MacBook";
+	
+	By cart=By.id("MacBook");
+	
+	public CartPage() {
+		
+	}
+	
+	public void addToCart() {
+		
+	}
 
 }
