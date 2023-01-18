@@ -6,6 +6,7 @@ public class Page1 {
 		
 		System.out.println("feature 1.0");
 		System.out.println("feature 2.0");
+		System.out.println("feature 3.0");
 
 	}
 
