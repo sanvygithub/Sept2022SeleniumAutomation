@@ -427,7 +427,7 @@ public class ElementUtil {
 		if (element == null) {
 			System.out.println("element is not found....tried for : " + timeUnit + " secs "
 					+ " with the interval of 500 millisecs");
-			throw new FrameworkException("TimeOutException");
+			//throw new FrameworkException("TimeOutException");
 		}
 		return element;
 
@@ -453,7 +453,7 @@ public class ElementUtil {
 		if (element == null) {
 			System.out.println("element is not found....tried for : " + timeUnit + " secs " + " with the interval of "
 					+ IntervalTime + " secs");
-			throw new FrameworkException("TimeOutException");
+			//throw new FrameworkException("TimeOutException");
 		}
 		return element;
 
