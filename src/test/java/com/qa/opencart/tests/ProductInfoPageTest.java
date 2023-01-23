@@ -13,17 +13,14 @@ public class ProductInfoPageTest extends BaseTest {
 
 	@BeforeClass
 	public void prodInfoSetup() {
-		accPage=loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
+		accPage = loginPage.doLogin(prop.getProperty("username"), prop.getProperty("password"));
 	}
 
 	@DataProvider
 
 	public Object[][] getProductTestData() {
-		return new Object[][] { {"Macbook", "MacBook Pro"},
-			{"Macbook", "MacBook Air"},
-			{"iMac", "iMac"},
-			{"Samsung", "Samsung SyncMaster 941BW"},
-			{"Apple", "Apple Cinema 30\""} };
+		return new Object[][] { { "Macbook", "MacBook Pro" }, { "Macbook", "MacBook Air" }, { "iMac", "iMac" },
+				{ "Samsung", "Samsung SyncMaster 941BW" }, { "Apple", "Apple Cinema 30\"" } };
 	}
 
 	@Test(dataProvider = "getProductTestData")
@@ -38,11 +35,8 @@ public class ProductInfoPageTest extends BaseTest {
 	@DataProvider
 
 	public Object[][] getProductImagesTestData() {
-		return new Object[][] { {"Macbook", "MacBook Pro", 4},
-			{"Macbook", "MacBook Air", 4},
-			{"iMac", "iMac", 3},
-			{"Samsung", "Samsung SyncMaster 941BW", 1},
-			{"Apple", "Apple Cinema 30\"", 6}  };
+		return new Object[][] { { "Macbook", "MacBook Pro", 4 }, { "Macbook", "MacBook Air", 4 }, { "iMac", "iMac", 3 },
+				{ "Samsung", "Samsung SyncMaster 941BW", 1 }, { "Apple", "Apple Cinema 30\"", 6 } };
 	}
 
 	@Test(dataProvider = "getProductImagesTestData")

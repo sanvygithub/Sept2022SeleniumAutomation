@@ -20,12 +20,12 @@
 
 	</properties>
 
-
 	<dependencies>
+
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
-			<version>4.6.0</version>
+			<version>4.7.2</version>
 		</dependency>
 
 		<dependency>
@@ -33,6 +33,7 @@
 			<artifactId>testng</artifactId>
 			<version>6.14.3</version>
 		</dependency>
+
 
 		<dependency>
 			<groupId>org.apache.poi</groupId>
@@ -49,7 +50,6 @@
 			<artifactId>poi-ooxml-schemas</artifactId>
 			<version>3.9</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.apache.poi</groupId>
 			<artifactId>poi-scratchpad</artifactId>
@@ -66,6 +66,7 @@
 			<artifactId>openxml4j</artifactId>
 			<version>1.0-beta</version>
 		</dependency>
+
 
 		<dependency>
 			<groupId>com.aventstack</groupId>
@@ -84,12 +85,7 @@
 			<artifactId>aspectjweaver</artifactId>
 			<version>${aspectj.version}</version>
 		</dependency>
-		<dependency>
-			<groupId>com.apple</groupId>
-			<artifactId>AppleJavaExtensions</artifactId>
-			<version>1.4</version>
-		</dependency>
-		
+
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -98,6 +94,7 @@
 
 
 	</dependencies>
+
 
 	<build>
 		<plugins>
@@ -114,30 +111,30 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.20</version>
+				<version>3.0.0-M1</version>
 
 				<configuration>
+					<reuseForks>false</reuseForks>
+					<testFailureIgnore>false</testFailureIgnore>
+					<useSystemClassLoader>false</useSystemClassLoader>
 					<forkCount>3</forkCount>
-					<reuseForks>true</reuseForks>
-					<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>
+					<!-- <argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine> -->
 					<suiteXmlFiles>
 						<suiteXmlFile>src/test/resources/testrunners/testng.xml</suiteXmlFile>
 
-						<!-- <suiteXmlFile>${suiteXmlFile}</suiteXmlFile> -->
+
 					</suiteXmlFiles>
 
+					<!-- <argLine> -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar" 
+						</argLine> -->
 
-					<argLine>
-						-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
-						
-					</argLine>
 				</configuration>
+
+
 			</plugin>
 
 
 		</plugins>
 
 	</build>
-
-
 </project>
